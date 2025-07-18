@@ -1,0 +1,50 @@
+[theme.overrides]
+idle_bg = "#000000"
+idle_fg = "#abcdef"
+
+[[block]]
+block = "cpu"
+format_alt = " $frequency{ }"
+info_cpu = 20
+
+[[block]]
+block = "amd_gpu"
+format = "$icon $utilization ($vram_used/8GB)" # $vram_total var gives incorrect data
+interval = 1
+
+[[block]]
+block = "net"
+format = "$icon $speed_down"
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "available"
+alert_unit = "GB"
+interval = "once"
+format = "$available.eng(w:2)"
+
+[[block]]
+block = "custom"
+command = "echo kernel:$(uname -r | cut -d_ -f1)"
+interval = "once"
+
+[[block]]
+block = "custom"
+command = "echo PKG:$(xhog | wc -l)"
+interval = "once"
+
+[[block]]
+block = "memory"
+format = "swap:$swap_used_percents.eng(w:2)"
+
+[[block]]
+block = "sound"
+[[block.click]]
+button = "left"
+cmd = "pavucontrol"
+
+[[block]]
+block = "time"
+interval = 5
+format = " $timestamp.datetime(f:'%a %d/%m %R')"

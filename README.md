@@ -1,16 +1,20 @@
-# dotfiles and wallpapers for Void Linux
-## Features
+# dotfiles  for Void Linux
+## Setup
 - Operating_System: Void Linux (glibc)
-- Wayland_Compositor: Sway w/ autotiling-rs
+- Wayland_Compositor-1: niri 
+- Wayland_Compositor-2: swayfx w/ autotiling-rs
 - Status_Bar: Swaybar w/ i3status-rust
 - Launcher: Tofi
-- Shell: Bash
+- Shell: fish
 - Terminal: Foot (footclient/server)
 
 [//]: <> (yes i KNOW my use of &nbsp should me considered as a war crime and it deserves no less than cartel style execution, pls dont judge..   )
 ## Screenshots
- 
-![nvim.png](https://github.com/Hari-c137/dotfiles/blob/main/assets/nvim.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+# niri
+todo()
+ # swayfx
+![nvim.png](https://github.com/Hari-c137/ricefield/blob/main/assets/nvim.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 ## Installation
 

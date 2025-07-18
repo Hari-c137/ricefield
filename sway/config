@@ -16,7 +16,6 @@ set $up k
 set $right l
 set $term footclient
 set $emacs emacsclient -nc
-set $ide fish -c "cd /home/x137/code/; alacritty -e vim"
 set $menu tofi-drun | xargs swaymsg exec --
 set $browser firefox-wayland
 set $file_select bash ~/code/scripts/bash/file_select.sh
@@ -26,7 +25,6 @@ set $autostart bash ~/code/scripts/bash/autostart.sh
 
     bindsym $mod+Return exec $term
     bindsym $mod+f exec $browser
-    bindsym $mod+t exec $ide
     bindsym $mod+Shift+Return exec $autostart
     bindsym $mod+m bar mode toggle
     bindsym $mod+c kill
@@ -102,13 +100,12 @@ bindsym $mod+r mode "resize"
     bindsym Print exec grim
 
 swaybg_command -
-# xwayland disabled
+xwayland disabled
 default_border none
 default_floating_border none
 titlebar_padding 1
 titlebar_border_thickness 0
 gaps inner 10
-bindcode 273 exec "echo 2 > /tmp/sov"
 
 bar {
     position bottom
@@ -123,7 +120,7 @@ bar {
     inactive_workspace  #00000033 #00000033 #FFFFFF 
     urgent_workspace    #00000033 #00000033 #FF0000
     }
-    font "Terminus" 13
+    font "IBMFontMono" 13
 }
 
 

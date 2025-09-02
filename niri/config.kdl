@@ -20,9 +20,9 @@ cursor {
     hide-after-inactive-ms 1000
 }
 
-
 layout {
-    gaps 10
+    background-color "transparent"
+    gaps 8
     center-focused-column "never"
     preset-column-widths {
         proportion 0.33333
@@ -35,7 +35,6 @@ layout {
         off
     }
 
-
     default-column-width { proportion 0.66667; }
 
     border {
@@ -45,9 +44,20 @@ layout {
     }
 }
 
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
+overview {
+    zoom 0.45
+}
+
 spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
+spawn-at-startup "swaybg" "-i" "/home/x137/pics/blur.png"
 spawn-at-startup "swww-daemon" "--format" "xrgb"
 spawn-at-startup "foot" "-s"
+spawn-at-startup "mako"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "pipewire"
 
@@ -86,32 +96,39 @@ hotkey-overlay {
 screenshot-path "~/pics/Screenshots/screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {
     // off
-    // slowdown 3.0
+    slowdown 0.7
 }
 
 
 window-rule {
     geometry-corner-radius 0
     clip-to-geometry true
+    open-maximized true
 }
 
 
+// workspace 1 web
+
+workspace "code"
+workspace "tool"
+workspace "media"
+workspace "game"
 
 binds {
-    Mod+Return { spawn "footclient"; }
-    Mod+D      { spawn "fuzzel";     }
+    Mod+Return { spawn "kitty"; }
+    Mod+D      { spawn "walker";     }
     Mod+E      { spawn "emacs"; }
     Mod+Tab repeat=false { toggle-overview; }
     Mod+Q { close-window; }
-    Mod+Shift+B   { spawn "~/code/scripts/bash/copy_key.sh"; }
-    Mod+Shift+W   { spawn "~/code/scripts/bash/swwwRand.sh"; }
+    Mod+Shift+B   { spawn "~/.config/niri/scripts/copy_key.sh"; }
+    Mod+Shift+W   { spawn "~/.config/niri/scripts/swwwRand.sh"; }
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }
     Mod+Up    { focus-window-up; }
     Mod+Right { focus-column-right; }
     Mod+H     { focus-column-left; }
- //   Mod+J     { focus-window-down; }
+ //   Mod+J     { focus-window-down; } // emulating vim motion for niri workflow
  //   Mod+K     { focus-window-up; }
     Mod+L     { focus-column-right; }
 
@@ -177,7 +194,8 @@ binds {
     Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
     Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
 
-// web / code / tool / media / game
+
+
 
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
@@ -188,15 +206,15 @@ binds {
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
-    Mod+Ctrl+1 { move-column-to-workspace 1; }
-    Mod+Ctrl+2 { move-column-to-workspace 2; }
-    Mod+Ctrl+3 { move-column-to-workspace 3; }
-    Mod+Ctrl+4 { move-column-to-workspace 4; }
-    Mod+Ctrl+5 { move-column-to-workspace 5; }
-    Mod+Ctrl+6 { move-column-to-workspace 6; }
-    Mod+Ctrl+7 { move-column-to-workspace 7; }
-    Mod+Ctrl+8 { move-column-to-workspace 8; }
-    Mod+Ctrl+9 { move-column-to-workspace 9; }
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
 
     Mod+BracketLeft  { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }

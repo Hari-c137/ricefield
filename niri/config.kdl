@@ -115,7 +115,7 @@ workspace "media"
 workspace "game"
 
 binds {
-    Mod+Return { spawn "kitty"; }
+    Mod+Return { spawn "kitty" "--session=devshell"; }
     Mod+D      { spawn "walker";     }
     Mod+E      { spawn "emacs"; }
     Mod+Tab repeat=false { toggle-overview; }

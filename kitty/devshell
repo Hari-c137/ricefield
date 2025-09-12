@@ -1,0 +1,20 @@
+new_tab dev
+
+cd ~/code
+launch nvim
+
+new_tab yazi
+
+launch yazi
+
+new_tab top
+
+layout tall
+launch btop
+launch nvtop -Pi
+launch htop -Mt
+
+new_tab tty
+
+cd ~/pics
+launch fish

@@ -57,6 +57,8 @@ spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
 spawn-at-startup "swaybg" "-i" "/home/x137/pics/blur.png"
 spawn-at-startup "swww-daemon" "--format" "xrgb"
 spawn-at-startup "foot" "-s"
+spawn-at-startup "/home/x137/file/Vicinae-c5d11870-x86_64.AppImage" "server"
+spawn-at-startup "/home/x137/file/"
 spawn-at-startup "mako"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "pipewire"
@@ -115,11 +117,9 @@ workspace "media"
 workspace "game"
 
 binds {
-    Mod+Return { spawn "kitty" "--session=devshell"; }
-    Mod+D      { spawn "walker";     }
-    Mod+E      { spawn "emacs"; }
-    Mod+Tab repeat=false { toggle-overview; }
-    Mod+Q { close-window; }
+    Mod+E           { spawn "kitty" "--session=devshell"; }
+    Mod+D           { spawn "/home/x137/file/Vicinae-c5d11870-x86_64.AppImage";     }
+    Mod+Return      { spawn "foot"; }
     Mod+Shift+B   { spawn "~/.config/niri/scripts/copy_key.sh"; }
     Mod+Shift+W   { spawn "~/.config/niri/scripts/swwwRand.sh"; }
 
@@ -195,14 +195,7 @@ binds {
     Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
 
 
-    XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
-    XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
-    XF86AudioMute                       allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute                    allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
-    XF86AudioNext                       allow-when-locked=true { spawn-sh "playerctl next"; }
-    XF86AudioPause                      allow-when-locked=true { spawn-sh "playerctl play-pause"; }
-    XF86AudioPlay                       allow-when-locked=true { spawn-sh "playerctl play-pause"; }
-    XF86AudioPrev                       allow-when-locked=true { spawn-sh "playerctl previous"; }
+
 
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
@@ -245,6 +238,9 @@ binds {
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
+
+    Mod+Tab repeat=false { toggle-overview; }
+    Mod+Q { close-window; }
 
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }

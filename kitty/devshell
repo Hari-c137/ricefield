@@ -1,20 +1,22 @@
 new_tab dev
-
-cd ~/code
-launch nvim
+launch fish
 
 new_tab yazi
-
 launch yazi
 
-new_tab top
+new_tab sys
+launch btm -R --process_memory_as_value --cpu_left_legend --enable_gpu --enable_cache_memory --theme  gruvbox --process_command
 
+new_tab
 layout tall
 launch btop
 launch nvtop -Pi
 launch htop -Mt
 
-new_tab tty
+new_tab lazy
+layout tall
+launch lazygit
+launch lazydocker
 
-cd ~/pics
+new_tab tty
 launch fish

@@ -57,7 +57,7 @@ spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
 spawn-at-startup "swaybg" "-i" "/home/x137/pics/blur.png"
 spawn-at-startup "swww-daemon" "--format" "xrgb"
 spawn-at-startup "foot" "-s"
-spawn-at-startup "/home/x137/file/Vicinae-c5d11870-x86_64.AppImage" "server"
+spawn-at-startup "/home/x137/file/Vicinae-dfd7f680-x86_64.AppImage" "server"
 spawn-at-startup "/home/x137/file/"
 spawn-at-startup "mako"
 spawn-at-startup "xwayland-satellite"
@@ -117,8 +117,8 @@ workspace "media"
 workspace "game"
 
 binds {
-    Mod+E           { spawn "kitty" "--session=devshell"; }
-    Mod+D           { spawn "/home/x137/file/Vicinae-c5d11870-x86_64.AppImage";     }
+    Mod+E           { spawn "kitty" "--start-as=fullscreen" "--session=devshell"; }
+    Mod+D           { spawn "/home/x137/file/Vicinae-dfd7f680-x86_64.AppImage";     }
     Mod+Return      { spawn "foot"; }
     Mod+Shift+B   { spawn "~/.config/niri/scripts/copy_key.sh"; }
     Mod+Shift+W   { spawn "~/.config/niri/scripts/swwwRand.sh"; }

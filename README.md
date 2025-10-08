@@ -1,3 +1,6 @@
+WARNING!!! **[DEPRECATED]**. i switched to NixOS, new configuration of my NixOS setup are over [here](https://github.com/Hari-c137/Echelon).<hr>
+
+
 # dotfiles  for Void Linux
 ## Setup
 - Operating_System: Void Linux (glibc)
@@ -20,4 +23,5 @@
 
 ## Installation
 
+these are just config files so...
 copy pasta should. would. could. probably. might. yield. success?... :/

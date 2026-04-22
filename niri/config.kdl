@@ -60,7 +60,6 @@ spawn-at-startup "foot" "-s"
 spawn-at-startup "/home/x137/file/Vicinae-dfd7f680-x86_64.AppImage" "server"
 spawn-at-startup "/home/x137/file/"
 spawn-at-startup "mako"
-spawn-at-startup "xwayland-satellite"
 spawn-at-startup "pipewire"
 
 environment {
